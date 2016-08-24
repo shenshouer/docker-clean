@@ -26,8 +26,10 @@ PREFIX=dhub.yunpro.cn/shenshouer/docker-clean
 to
 
 ```
+...
 TAG=[YOUR TAG]
 PREFIX=[YOUR IMAGE PREFIX]
+...
 ```
 
 ## usage
