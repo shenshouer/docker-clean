@@ -10,6 +10,24 @@ $ make build
 
 ```
 $ make image
+
+```
+
+## build you own image
+
+Edit Makefile:
+```
+...
+TAG=dev
+PREFIX=dhub.yunpro.cn/shenshouer/docker-clean
+...
+```
+
+to
+
+```
+TAG=[YOUR TAG]
+PREFIX=[YOUR IMAGE PREFIX]
 ```
 
 ## usage
