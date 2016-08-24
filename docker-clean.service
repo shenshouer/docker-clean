@@ -1,0 +1,18 @@
+[Unit]
+Description=docker-clean
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill docker-clean
+ExecStartPre=-/usr/bin/docker rm docker-clean
+ExecStartPre=/usr/bin/docker pull dhub.yunpro.cn/shenshouer/docker-clean:dev
+ExecStart=/usr/bin/docker run --name docker-clean -v /etc/localtime:/etc/localtime -v /var/run/docker.sock:/var/run/docker.sock dhub.yunpro.cn/shenshouer/docker-clean:dev --start-time 00:00 --stop-time 06:00
+ExecStop=/usr/bin/docker kill docker-clean
+ExecStop=/usr/bin/docker rm docker-clean
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
