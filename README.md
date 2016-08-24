@@ -14,6 +14,8 @@ $ make image
 
 ## usage
 
+The [service file](docker-clean.service) used in CoreOS.
+
 ```
 ./docker-clean --docker-host http://localhost:2375 --start-time 16:12 --stop-time 16:14
 
